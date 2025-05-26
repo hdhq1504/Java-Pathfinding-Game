@@ -27,8 +27,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
     private PathFinder pathFinder;
     private int size = 50;
     private int cellSize = 80;
-    private int playerRow = 0;
-    private int playerCol = 0;
+    private int playerRow = 0, playerCol = 0;
     private int score = 0;
     private int total = 0;
     private Timer gameTimer;
@@ -44,8 +43,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
     private final String floorImgPath = "images/floor.png";
     private final String startImgPath = "";
     private final String exitImgPath = "images/DoorWin.png";
-    private final int PANEL_WIDTH = 900;
-    private final int PANEL_HEIGHT = 900;
+    private final int PANEL_WIDTH = 900, PANEL_HEIGHT = 900;
 
     /**
      * Creates new form GameJFrame
@@ -309,8 +307,6 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
                 collectible.collect();
                 int point = collectible.getPoints();
                 score += point;
-                
-                System.out.println("Thu thập đồng xu! Nhận được " + score + " điểm");
                 break;
             }
         }
