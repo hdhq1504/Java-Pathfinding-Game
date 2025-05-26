@@ -30,6 +30,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
     private int playerRow = 0;
     private int playerCol = 0;
     private int score = 0;
+    private int total = 0;
     private Timer gameTimer;
     private int initialTime = 300; // 5 phút
     private int timeRemaining = 300;
@@ -195,9 +196,10 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
         String message;
         if (won) {
             win++;                        // Tăng số lần thắng
+            total += score;               // Cộng vào tổng điểm sau mỗi màn chơi
             checkDifficultyProgression(); // Kiểm tra số lần thắng = 5, giảm 10s
             
-            message = "CHÚC MỪNG BẠN ĐÃ THẮNG!\n" + "ĐIỂM SỐ: " + score + "\n" + "TỔNG SỐ MÀN CHƠI THẮNG: " + win;
+            message = "CHÚC MỪNG BẠN ĐÃ THẮNG!\n" + "TỔNG ĐIỂM: " + total + "\n" + "SỐ MÀN CHƠI THẮNG: " + win;
             
             // Sau khi hiển thị ẩn message, tạo mê cung mới
             try {
@@ -212,13 +214,12 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
                 return;
             }
             
-            // Xóa highlight đường đi màn chơi trước
+            // Reset màn chơi mới
             hintUsed = false;
             pathFinder = null;
-            
         } else {
             message = "GAME OVER!\n" + "HẾT THỜI GIAN RỒI!\n" 
-                    + "ĐIỂM SỐ CUỐI: " + score;
+                    + "TỔNG ĐIỂM ĐẠT ĐƯỢC: " + total;
         }
 
         JOptionPane.showMessageDialog(this, message, won ? "THẮNG!" : "THUA!",
@@ -375,7 +376,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
         btnReset.setBackground(new java.awt.Color(143, 156, 172));
         btnReset.setFont(new java.awt.Font("SVN-Determination Sans", 0, 26)); // NOI18N
         btnReset.setForeground(new java.awt.Color(255, 255, 255));
-        btnReset.setText("RESET");
+        btnReset.setText("CHƠI LẠI");
         btnReset.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
         btnReset.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -510,11 +511,6 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
             JOptionPane.showMessageDialog(this, "BẠN ĐÃ SỬ DỤNG GỢI Ý!", "THÔNG BÁO", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        if (gameWon) {
-            JOptionPane.showMessageDialog(this, "GAME KẾT THÚC!", "THÔNG BÁO", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
 
         hintUsed = true;
         score = Math.max(0, score - 10);
@@ -593,7 +589,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
         // TODO add your handling code here:
         int choice = JOptionPane.showConfirmDialog(
             this,
-            "BẠN CÓ MUỐN RESET GAME KHÔNG?\nTẤT CẢ TIẾN TRÌNH SẼ BỊ MẤT!",
+            "BẠN CÓ MUỐN CHƠI LẠI GAME KHÔNG?",
             "",
             JOptionPane.YES_NO_OPTION
         );

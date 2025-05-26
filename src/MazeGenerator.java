@@ -235,7 +235,7 @@ public class MazeGenerator {
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
                 if (r == startRow && c == startCol) {
-                    tileImages[r][c] = startImg; 
+                    tileImages[r][c] = floorImg;
                 } 
                 else if (r == exitRow && c == exitCol) {
                     tileImages[r][c] = exitImg;
