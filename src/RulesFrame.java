@@ -67,7 +67,7 @@ public class RulesFrame extends javax.swing.JFrame {
         taRule.setForeground(new java.awt.Color(237, 189, 42));
         taRule.setLineWrap(true);
         taRule.setRows(5);
-        taRule.setText("1. MỤC TIÊU:\n• Tìm đường thoát khỏi mê cung trong thời gian quy định.\n• Thu thập xu vàng để tăng điểm số (thu thập càng nhiều càng tốt).\n\n2. THỜI GIAN:\n• Thời gian ban đầu: 2 phút.\n• Giảm 10 giây sau mỗi 5 lần thắng để tăng độ khó.\n\n3. HỆ THỐNG ĐIỂM:\n• Thu thập xu vàng: +5 điểm.\n• Hoàn thành mê cung: +50 điểm.\n• Sử dụng gợi ý: -10 điểm.\n\n4. GỢI Ý: \n• Chỉ được sử dụng 1 lần mỗi màn chơi.");
+        taRule.setText("1. MỤC TIÊU:\n• Tìm đường thoát khỏi mê cung trong thời gian quy định.\n• Thu thập xu vàng để tăng điểm số (thu thập càng nhiều càng tốt).\n\n2. THỜI GIAN:\n• Thời gian ban đầu: 5 phút.\n• Giảm 10 giây sau mỗi 5 lần thắng để tăng độ khó.\n\n3. HỆ THỐNG ĐIỂM:\n• Thu thập xu vàng: +5 điểm.\n• Hoàn thành mê cung: +50 điểm.\n• Sử dụng gợi ý: -10 điểm.\n\n4. GỢI Ý: \n• Chỉ được sử dụng 1 lần mỗi màn chơi.");
         taRule.setWrapStyleWord(true);
         taRule.setBorder(null);
         jScrollPane2.setViewportView(taRule);

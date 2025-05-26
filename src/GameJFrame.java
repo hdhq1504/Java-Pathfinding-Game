@@ -27,14 +27,14 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
     private PathFinder pathFinder;
     private int size = 50;
     private int cellSize = 80;
-    private int score = 0;
-    private int timeRemaining = 120;
-    private int initialTime = 120;
-    private Timer gameTimer;
-    private boolean hintUsed = false;
-    private List<Collectible> collectibles = new ArrayList<>();
     private int playerRow = 0;
     private int playerCol = 0;
+    private int score = 0;
+    private Timer gameTimer;
+    private int initialTime = 300; // 5 phút
+    private int timeRemaining = 300;
+    private boolean hintUsed = false;
+    private List<Collectible> collectibles = new ArrayList<>();
     private boolean gameStarted = false;
     private boolean gameWon = false;
     private int win = 0;
@@ -44,7 +44,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
     private final String startImgPath = "";
     private final String exitImgPath = "images/DoorWin.png";
     private final int PANEL_WIDTH = 900;
-    private final int PANEL_HEIGHT = 920;
+    private final int PANEL_HEIGHT = 900;
 
     /**
      * Creates new form GameJFrame
@@ -179,7 +179,10 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
     
     private void updateGameInfo() {
         timeProgressBar.setValue(timeRemaining);
-        timeProgressBar.setString(timeRemaining + "s");
+        int phut = timeRemaining / 60;
+        int giay = timeRemaining % 60;
+        String tGian = String.format("%dm%02ds", phut, giay);
+        timeProgressBar.setString(tGian);
         lblScore.setText("ĐIỂM: " + score);
     }
     
@@ -423,10 +426,9 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
         lblTimer.setText("THỜI GIAN");
 
         timeProgressBar.setBackground(new java.awt.Color(254, 108, 0));
-        timeProgressBar.setFont(new java.awt.Font("SVN-Determination Sans", 0, 16)); // NOI18N
-        timeProgressBar.setForeground(new java.awt.Color(255, 255, 255));
-        timeProgressBar.setMaximum(120);
-        timeProgressBar.setValue(120);
+        timeProgressBar.setFont(new java.awt.Font("SVN-Determination Sans", 0, 20)); // NOI18N
+        timeProgressBar.setMaximum(300);
+        timeProgressBar.setValue(300);
         timeProgressBar.setString("");
         timeProgressBar.setStringPainted(true);
 
