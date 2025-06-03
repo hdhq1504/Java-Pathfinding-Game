@@ -1,3 +1,5 @@
+package POJO;
+
 /**
  * Lớp Player đại diện cho người chơi trong game mê cung
  * Quản lý vị trí, hướng di chuyển và hình ảnh hiển thị của player

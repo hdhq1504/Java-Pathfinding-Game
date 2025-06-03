@@ -1,3 +1,9 @@
+package GUI;
+
+import POJO.Player;
+import POJO.Collectible;
+import DAO.PathFinder;
+import DAO.MazeGenerator;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -689,7 +695,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
         updateGameInfo();
         drawPanel.repaint();
         this.requestFocus();
-    }//GEN-LAST:event_btnHintActionPerformed
+    }                                       
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
@@ -763,7 +769,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
             "",
             JOptionPane.INFORMATION_MESSAGE
         );
-    }//GEN-LAST:event_btnStartActionPerformed
+    }                                        
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {
         // Hiển thị dialog xác nhận reset
@@ -801,7 +807,7 @@ public class GameJFrame extends javax.swing.JFrame implements KeyListener {
             // Thông báo đã reset
             JOptionPane.showMessageDialog(this, "GAME ĐÃ ĐƯỢC RESET!", "THÔNG BÁO", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_btnResetActionPerformed
+    }                                        
     
     /**
      * @param args the command line arguments

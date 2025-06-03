@@ -1,3 +1,5 @@
+package DAO;
+
 import java.awt.Image;
 import java.io.IOException;
 import java.util.Random;
